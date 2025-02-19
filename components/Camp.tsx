@@ -49,7 +49,7 @@ const CampSite = ({
   peopleJoined,
   style,
 }: CampProps) => {
-  const getIconForEvent = (title) => {
+  const getIconForEvent = (title: string) => {
     const titleLower = title.toLowerCase();
 
     for (const eventIcon of eventIcons) {
