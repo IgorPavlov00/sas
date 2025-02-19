@@ -10,6 +10,8 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true, // Add this line
+
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
