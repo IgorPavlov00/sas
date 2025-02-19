@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import useScrollToOffset from "./hooks/hook.tsx"; // Or the correct path if you are using aliases
 
 const Features = () => {
-  const [featuresRef] = useScrollToOffset(80, 0.5); // Adjust 80px as needed
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1, staggerChildren: 0.2 } },
@@ -20,7 +18,7 @@ const Features = () => {
 
   return (
     <>
-      <div ref={featuresRef} id="features">
+      <div id="features">
         <br></br>
       </div>
       <section

@@ -3,8 +3,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import useScrollToOffset from "./hooks/hook.tsx"; // Or the correct path if you are using aliases
-
 import {
   faBriefcase,
   faTrophy,
@@ -144,7 +142,6 @@ const CampSite = ({
 const Camp = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [eventRef] = useScrollToOffset(80, 0.5); // Adjust 80px as needed
 
   const slides = [
     {
@@ -219,7 +216,7 @@ const Camp = () => {
 
   return (
     <>
-      <div ref={eventRef} id="events">
+      <div id="events">
         <br></br>
       </div>
       <section className="2xl:max-container relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20">

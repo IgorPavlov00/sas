@@ -2,14 +2,11 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import useScrollToOffset from "./hooks/hook.tsx"; // Or the correct path if you are using aliases
 
 const About = () => {
-  const [aboutRef] = useScrollToOffset(80, 0.5); // Adjust 80px as needed
-
   return (
     <>
-      <div ref={aboutRef} id="about">
+      <div id="about">
         <br></br>
         <br></br>
       </div>

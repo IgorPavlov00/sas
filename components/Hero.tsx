@@ -2,13 +2,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import useScrollToOffset from "./hooks/hook.tsx"; // Or the correct path if you are using aliases
 const Hero = () => {
-  const [heroRef] = useScrollToOffset(10, 0.5); // Adjust 80px as needed
-
   return (
     <>
-      <div ref={heroRef} id="home"></div>
+      <div id="home"></div>
       <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
         <motion.div
           initial={{ opacity: 0 }}
