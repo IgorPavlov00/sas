@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useScrollToOffset from "./hooks/hook.tsx"; // Or the correct path if you are using aliases
 
 import {
-  faParty,
   faBriefcase,
   faTrophy,
   faPalette,
