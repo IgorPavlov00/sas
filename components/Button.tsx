@@ -6,7 +6,8 @@ export interface ButtonProps {
   icon?: string;
   variant: string;
   full?: boolean;
-  onClick?: () => void; // Add this line
+  onClick?: () => void;
+  className?: string; // ✅ Add this line
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,12 +17,13 @@ const Button: React.FC<ButtonProps> = ({
   variant,
   full,
   onClick,
+  className, // ✅ Add this line
 }) => {
   return (
     <button
       type={type}
-      className={`btn ${variant} ${full ? "w-full" : ""}`}
-      onClick={onClick} // Add this line
+      onClick={onClick}
+      className={`btn ${variant} ${full ? "w-full" : ""} ${className ?? ""}`} // ✅ Merge with variant
     >
       {icon && <img src={icon} alt={title} />}
       {title}
