@@ -1,4 +1,4 @@
-"use client"; // Important for using hooks in client components
+"use client";
 
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
@@ -9,13 +9,13 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,6 +26,7 @@ const Navbar = () => {
         isSticky ? "sticky top-0 bg-white/80 backdrop-blur-lg" : ""
       }`}
     >
+      {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
           src="https://media.licdn.com/dms/image/v2/D4D0BAQFruZNOGtgpzQ/company-logo_100_100/company-logo_100_100/0/1737536019682/foxspot_logo?e=1747872000&v=beta&t=MZuQ-EZbajZaeqMVsN1dHSkMA0tD4IJ_vJP4sPKw3fw"
@@ -35,6 +36,7 @@ const Navbar = () => {
         />
       </Link>
 
+      {/* Desktop Links */}
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
           <li key={link.key}>
@@ -50,12 +52,14 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="lg:flexCenter hidden">
+      {/* Desktop Button */}
+      <div className="lg:flex hidden">
         <Button
           type="button"
           title="Contact us"
           icon="/user.svg"
           variant="btn_dark_green"
+          className="rounded-full px-6 py-2 text-white bg-green-700 hover:bg-green-800 transition flex items-center gap-2"
           onClick={() => {
             const footer = document.querySelector("footer");
             if (footer) {
@@ -67,13 +71,49 @@ const Navbar = () => {
         />
       </div>
 
-      <Image
-        src="/menu.svg"
-        alt="menu"
-        width={32}
-        height={32}
-        className="inline-block cursor-pointer lg:hidden"
-      />
+      {/* Mobile Menu Icon */}
+      <div className="lg:hidden flex items-center">
+        <Image
+          src="/menu.svg"
+          alt="menu"
+          width={32}
+          height={32}
+          className="cursor-pointer"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        />
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-[100%] left-0 w-full bg-white shadow-md flex flex-col items-center py-4 lg:hidden">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.key}
+              href={link.href}
+              className={`my-2 text-lg text-gray-800 hover:font-bold ${
+                pathname === link.href ? "font-bold" : ""
+              }`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Button
+            type="button"
+            title="Contact us"
+            icon="/user.svg"
+            variant="btn_dark_green"
+            className="rounded-full mt-4 px-6 py-2 text-white bg-green-700 hover:bg-green-800 transition flex items-center gap-2"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              const footer = document.querySelector("footer");
+              if (footer) {
+                footer.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          />
+        </div>
+      )}
     </nav>
   );
 };
