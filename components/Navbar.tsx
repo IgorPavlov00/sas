@@ -1,10 +1,10 @@
-// Navbar.tsx
+// components/Navbar.tsx
 "use client";
+import React, { useState, useEffect } from "react";
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
