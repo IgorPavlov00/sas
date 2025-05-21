@@ -53,15 +53,19 @@ const GetApp = () => {
                 icon="/apple.svg"
                 variant="btn_white"
                 full
+                className="rounded-full px-6 py-3 text-black bg-white hover:bg-gray-100 transition flex items-center justify-center gap-2"
               />
+            
               <Button
                 type="button"
                 title="Play Store"
                 icon="/android.svg"
                 variant="btn_dark_green_outline"
                 full
+                className="rounded-full px-6 py-3 border border-green-700 text-green-700 hover:bg-green-50 transition flex items-center justify-center gap-2"
               />
             </motion.div>
+
           </motion.div>
 
           <motion.div
