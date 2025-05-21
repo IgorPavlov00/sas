@@ -1,14 +1,13 @@
-// components/hooks/hook.tsx
 "use client";
-import { useEffect, useRef } from "react";
+
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 export const useScrollToOffset = <T extends HTMLElement = HTMLElement>(
-  offset: number = 100, // Increased offset (adjust as needed)
+  offset: number = 100,
   threshold: number = 0.5
-): [React.RefObject<T>, boolean] => {
-  const ref = useRef<T>(null);
-  const [inView, entry] = useInView({ threshold });
+): [React.RefCallback<T>, boolean] => {
+  const { ref, inView, entry } = useInView({ threshold });
 
   useEffect(() => {
     if (inView && entry) {
@@ -17,11 +16,10 @@ export const useScrollToOffset = <T extends HTMLElement = HTMLElement>(
       if (targetElement) {
         let top = targetElement.getBoundingClientRect().top;
 
-        // 1. Get the height of the sticky/fixed navbar (adjust selector if needed)
-        const navbar = document.querySelector("nav"); // Or a more specific selector
+        const navbar = document.querySelector("nav");
         const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
-        let totalOffset = offset + navbarHeight; // Add navbar height to the offset
+        let totalOffset = offset + navbarHeight;
 
         let parent = targetElement.parentElement;
         while (parent && parent !== document.body) {
@@ -42,7 +40,7 @@ export const useScrollToOffset = <T extends HTMLElement = HTMLElement>(
     }
   }, [inView, entry, offset]);
 
-  return [ref, inView];
+  return [ref as React.RefCallback<T>, inView];
 };
 
 export default useScrollToOffset;
