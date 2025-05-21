@@ -1,9 +1,9 @@
 "use client";
+
 import { FEATURES } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import useScrollToOffset from "./hooks/hook.tsx"; // Or the correct path if you are using aliases
 
 const Features = () => {
   const containerVariants = {
@@ -19,47 +19,47 @@ const Features = () => {
   return (
     <>
       <div id="features">
-        <br></br>
+        <br />
       </div>
+
       <section
-        className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24 0"
+        className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24"
         id="features"
       >
-        <div className="max-container padding-container relative w-full flex justify-end ">
+        <div className="max-container padding-container relative w-full flex flex-col lg:flex-row gap-12 items-center justify-between">
+          {/* 📱 Phone Image (Responsive) */}
           <motion.div
-            className="flex flex-1 lg:min-h-[800px]"
+            className="flex justify-center w-full lg:w-[40%]"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div className="flex flex-1 lg:min-h-[800px] ml-10 md:ml-20 lg:ml-24">
-              <motion.div variants={itemVariants}>
-                <Image
-                  src="/iphone.png"
-                  alt="phone"
-                  width={290}
-                  height={1000}
-                  className="feature-phone"
-                />
-              </motion.div>
+            <motion.div variants={itemVariants}>
+              <Image
+                src="/iphone.png"
+                alt="phone"
+                width={290}
+                height={1000}
+                className="w-auto max-w-[80%] lg:max-w-full"
+              />
             </motion.div>
-
-
           </motion.div>
 
-          <div className="z-20 flex w-full flex-col lg:w-[60%]">
+          {/* 🧾 Text + Features List */}
+          <div className="z-20 w-full flex flex-col lg:w-[60%]">
             <div className="relative">
               <motion.h2
                 className="bold-40 lg:bold-64"
-                initial={{ opacity: 0, y: -20 }} // Initial position slightly above
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
                 Our Features
               </motion.h2>
             </div>
+
             <motion.ul
-              className=" grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-10"
+              className="grid gap-10 md:grid-cols-2"
               initial="hidden"
               animate="visible"
               variants={containerVariants}
@@ -70,7 +70,7 @@ const Features = () => {
                   title={feature.title}
                   icon={feature.icon}
                   description={feature.description}
-                  variants={itemVariants} // Apply item variants to each list item
+                  variants={itemVariants}
                 />
               ))}
             </motion.ul>
@@ -98,8 +98,8 @@ const FeatureItem = ({
       className="flex w-full flex-1 flex-col items-start"
       variants={variants}
     >
-      <div className="rounded ">
-        <Image src={icon} alt="map" width={48} height={38} />
+      <div className="rounded">
+        <Image src={icon} alt={title} width={48} height={38} />
       </div>
       <h2 className="bold-20 lg:bold-32 mt-5 capitalize">{title}</h2>
       <p className="regular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">
