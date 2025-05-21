@@ -1,19 +1,29 @@
-// components/Button.tsx
 import React from "react";
 
-interface ButtonProps {
+export interface ButtonProps {
   type: "button" | "submit" | "reset";
   title: string;
   icon: string;
   variant: string;
   full?: boolean;
-  onClick?: () => void; // Add this line to include onClick
+  onClick?: () => void; // Add this line
 }
 
-const Button = ({ type, title, icon, variant, full, onClick }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+  type,
+  title,
+  icon,
+  variant,
+  full,
+  onClick,
+}) => {
   return (
-    <button type={type} className={variant} onClick={onClick}>
-      <img src={icon} alt="" />
+    <button
+      type={type}
+      className={`btn ${variant} ${full ? "w-full" : ""}`}
+      onClick={onClick} // Add this line
+    >
+      {icon && <img src={icon} alt={title} />}
       {title}
     </button>
   );
