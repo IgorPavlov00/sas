@@ -39,7 +39,7 @@ const GetApp = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut", delay: 0.4 }}
             >
-              Available on iOS and Android
+              Available for Android and soon for iOS
             </motion.p>
             <motion.div
               className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row"
@@ -56,14 +56,21 @@ const GetApp = () => {
                 className="rounded-full px-6 py-3 text-black bg-white hover:bg-gray-100 transition flex items-center justify-center gap-2"
               />
             
-              <Button
-                type="button"
-                title="Play Store"
-                icon="/android.svg"
-                variant="btn_dark_green_outline"
-                full
-                className="rounded-full px-6 py-3 border border-green-700 text-green-700 hover:bg-green-50 transition flex items-center justify-center gap-2"
-              />
+              <a
+                href="https://play.google.com/store/apps/details?id=com.foxspot.myapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  type="button"
+                  title="Play Store"
+                  icon="/android.svg"
+                  variant="btn_dark_green_outline"
+                  full
+                  className="rounded-full px-6 py-3 border border-green-700 text-green-700 hover:bg-green-50 transition flex items-center justify-center gap-2"
+                />
+              </a>
+
             </motion.div>
 
           </motion.div>
