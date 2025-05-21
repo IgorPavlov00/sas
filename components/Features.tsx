@@ -32,15 +32,18 @@ const Features = () => {
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div variants={itemVariants}>
-              <Image
-                src="/iphone.png"
-                alt="phone"
-                width={290}
-                height={1000}
-                className="feature-phone"
-              />
+            <motion.div className="flex flex-1 lg:min-h-[800px] ml-10 md:ml-20 lg:ml-24">
+              <motion.div variants={itemVariants}>
+                <Image
+                  src="/iphone.png"
+                  alt="phone"
+                  width={290}
+                  height={1000}
+                  className="feature-phone"
+                />
+              </motion.div>
             </motion.div>
+
 
           </motion.div>
 
