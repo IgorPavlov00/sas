@@ -34,16 +34,19 @@ const Features = () => {
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div
-              variants={itemVariants}
-              className="transform rotate-[10deg] scale-90 lg:scale-100"
-            >
+           <motion.div
+            className="flex flex-1 lg:min-h-[800px]"
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+          >
+            <motion.div variants={itemVariants}>
               <Image
                 src="/iphone.png"
                 alt="phone"
-                width={230}
-                height={500}
-                className="w-auto max-w-[80%] lg:max-w-full"
+                width={290}
+                height={1000}
+                className="feature-phone"
               />
             </motion.div>
           </motion.div>
