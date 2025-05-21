@@ -75,13 +75,21 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="flex flex-col w-full gap-3 sm:flex-row"
           >
-            <Button type="button" title="Download App" variant="btn_green" />
+            <Button
+              type="button"
+              title="Download App"
+              variant="btn_green"
+              className="rounded-full px-6 py-3 text-white bg-green-700 hover:bg-green-800 transition-all"
+            />
+            
             <Button
               type="button"
               title="How we work?"
               icon="/play.svg"
               variant="btn_white_text"
+              className="rounded-full px-6 py-3 border border-gray-300 hover:bg-gray-100 transition-all"
             />
+
           </motion.div>
         </div>
 
