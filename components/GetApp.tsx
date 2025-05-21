@@ -70,7 +70,7 @@ const GetApp = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            <Image src="/pattern.png" alt="phones" width={350} height={570} />
+            <Image src="/phone3.png" alt="phones" width={350} height={570} />
           </motion.div>
         </div>
       </section>
