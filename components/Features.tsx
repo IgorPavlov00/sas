@@ -27,20 +27,23 @@ const Features = () => {
         id="features"
       >
         <div className="max-container padding-container relative w-full flex flex-col lg:flex-row gap-12 items-center justify-between">
-          {/* 📱 Phone Image (Responsive) */}
+          {/* 📱 Phone Image - Smaller + Rotated */}
           <motion.div
             className="flex justify-center w-full lg:w-[40%]"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div variants={itemVariants}>
+            <motion.div
+              variants={itemVariants}
+              className="transform rotate-[-12deg] scale-90 lg:scale-100"
+            >
               <Image
                 src="/iphone.png"
                 alt="phone"
-                width={290}
-                height={1000}
-                className="w-auto max-w-[80%] lg:max-w-full"
+                width={240}
+                height={600}
+                className="w-auto max-w-[70%] lg:max-w-full"
               />
             </motion.div>
           </motion.div>
