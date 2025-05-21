@@ -3,7 +3,7 @@ import React from "react";
 export interface ButtonProps {
   type: "button" | "submit" | "reset";
   title: string;
-  icon: string;
+  icon?: string;
   variant: string;
   full?: boolean;
   onClick?: () => void; // Add this line
