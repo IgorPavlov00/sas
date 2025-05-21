@@ -27,7 +27,7 @@ const Features = () => {
         id="features"
       >
         <div className="max-container padding-container relative w-full flex flex-col lg:flex-row gap-12 items-center justify-between">
-          {/* 📱 Phone Image - Smaller + Rotated */}
+          {/* 📱 Phone Image - Small, rotated right, nicely positioned */}
           <motion.div
             className="flex justify-center w-full lg:w-[40%]"
             initial="hidden"
@@ -36,30 +36,28 @@ const Features = () => {
           >
             <motion.div
               variants={itemVariants}
-              className="transform rotate-[-12deg] scale-90 lg:scale-100"
+              className="transform rotate-[10deg] scale-90 lg:scale-100"
             >
               <Image
                 src="/iphone.png"
                 alt="phone"
-                width={240}
-                height={600}
-                className="w-auto max-w-[70%] lg:max-w-full"
+                width={230}
+                height={500}
+                className="w-auto max-w-[80%] lg:max-w-full"
               />
             </motion.div>
           </motion.div>
 
           {/* 🧾 Text + Features List */}
           <div className="z-20 w-full flex flex-col lg:w-[60%]">
-            <div className="relative">
-              <motion.h2
-                className="bold-40 lg:bold-64"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                Our Features
-              </motion.h2>
-            </div>
+            <motion.h2
+              className="bold-40 lg:bold-64"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Our Features
+            </motion.h2>
 
             <motion.ul
               className="grid gap-10 md:grid-cols-2"
