@@ -23,9 +23,12 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type={type}
       onClick={onClick}
-      className={`btn ${variant} ${full ? "w-full" : ""} ${className ?? ""}`} // ✅ Merge with variant
+      className={`btn ${variant} ${full ? "w-full" : ""} ${className ?? ""} flex items-center gap-2`}
     >
-      <span>{title}</span>      {title}    </button>
+      {/* Icon on the left if provided */}
+      {icon && <img src={icon} alt={`${title} icon`} className="w-5 h-5" />}
+      <span>{title}</span>
+    </button>
   );
 };
 
