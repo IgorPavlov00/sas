@@ -25,9 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       className={`btn ${variant} ${full ? "w-full" : ""} ${className ?? ""}`} // ✅ Merge with variant
     >
-      {icon && <img src={icon} alt={title} />}
-      {title}
-    </button>
+      <span>{title}</span>      {title}    </button>
   );
 };
 
