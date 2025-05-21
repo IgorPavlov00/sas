@@ -21,21 +21,13 @@ const Features = () => {
       <div id="features">
         <br />
       </div>
-
       <section
         className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24"
         id="features"
       >
-        <div className="max-container padding-container relative w-full flex flex-col lg:flex-row gap-12 items-center justify-between">
-          {/* 📱 Phone Image - Small, rotated right, nicely positioned */}
+        <div className="max-container padding-container relative w-full flex justify-end">
           <motion.div
-            className="flex justify-center w-full lg:w-[40%]"
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-          >
-           <motion.div
-            className="flex flex-1 lg:min-h-[800px]"
+            className="flex flex-1 lg:min-h-[800px] lg:ml-10 xl:ml-16" // ✅ Slight right shift
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -51,19 +43,19 @@ const Features = () => {
             </motion.div>
           </motion.div>
 
-          {/* 🧾 Text + Features List */}
-          <div className="z-20 w-full flex flex-col lg:w-[60%]">
-            <motion.h2
-              className="bold-40 lg:bold-64"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Our Features
-            </motion.h2>
-
+          <div className="z-20 flex w-full flex-col lg:w-[60%]">
+            <div className="relative">
+              <motion.h2
+                className="bold-40 lg:bold-64"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Our Features
+              </motion.h2>
+            </div>
             <motion.ul
-              className="grid gap-10 md:grid-cols-2"
+              className="grid gap-10 md:grid-cols-2 lg:gap-10"
               initial="hidden"
               animate="visible"
               variants={containerVariants}
