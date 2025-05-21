@@ -1,23 +1,22 @@
-import Image from "next/image";
+// components/Button.tsx
+import React from 'react';
 
-type ButtonProps = {
-  type: 'button' | 'submit';
+export interface ButtonProps {
+  type: 'button' | 'submit' | 'reset';
   title: string;
-  icon?: string;
+  icon: string;
   variant: string;
   full?: boolean;
+  onClick?: () => void; // Add this line
 }
 
-const Button = ({ type, title, icon, variant, full }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({ type, title, icon, variant, full, onClick }) => {
   return (
-    <button
-    className={`flexCenter gap-3 rounded-full border ${variant} ${full && 'w-full'}`}
-      type={type}
-    >
-      {icon && <Image src={icon} alt={title} width={24} height={24} />}
-      <label className="bold-16 whitespace-nowrap cursor-pointer">{title}</label>
+    <button type={type} className={variant} onClick={onClick}>
+      <img src={icon} alt="" />
+      {title}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
