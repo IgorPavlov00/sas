@@ -1,10 +1,11 @@
-"use client"; // Important for using hooks in client components
+// Navbar.tsx
+"use client";
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
-import Link from "next/link"; // Import Link
+import Link from "next/link";
 import Button from "./Button";
-import { useState, useEffect } from "react"; // Import useState and useEffect
-import { usePathname } from "next/navigation"; // Import usePathname
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -56,12 +57,11 @@ const Navbar = () => {
           icon="/user.svg"
           variant="btn_dark_green"
           onClick={() => {
-            // Add onClick handler
-            const footer = document.querySelector("footer"); // Select your footer element
+            const footer = document.querySelector("footer");
             if (footer) {
-              footer.scrollIntoView({ behavior: "smooth" }); // Scroll to footer
+              footer.scrollIntoView({ behavior: "smooth" });
             } else {
-              console.error("Footer element not found!"); // Handle if footer doesn't exist
+              console.error("Footer element not found!");
             }
           }}
         />
