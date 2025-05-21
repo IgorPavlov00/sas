@@ -51,20 +51,21 @@ const Navbar = () => {
       </ul>
 
       <div className="lg:flexCenter hidden">
-        <Button
-          type="button"
-          title="Contact us"
-          icon="/user.svg"
-          variant="btn_dark_green"
-          onClick={() => {
-            const footer = document.querySelector("footer");
-            if (footer) {
-              footer.scrollIntoView({ behavior: "smooth" });
-            } else {
-              console.error("Footer element not found!");
-            }
-          }}
-        />
+          <Button
+            type="button"
+            title="Contact us"
+            icon="/user.svg"
+            variant="btn_dark_green"
+            onClick={() => {
+              const footer = document.querySelector("footer");
+              if (footer) {
+                footer.scrollIntoView({ behavior: "smooth" });
+              } else {
+                console.error("Footer element not found!");
+              }
+            }}
+          />
+
       </div>
 
       <Image
