@@ -38,7 +38,7 @@ const Features = () => {
                 alt="phone"
                 width={290}
                 height={1000}
-                className="className="feature-phone"
+                className="feature-phone"
               />
             </motion.div>
           </motion.div>
