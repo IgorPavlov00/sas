@@ -29,7 +29,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
-          src="https://ibb.co/0jPQ2Cjh"
+          src="https://i.ibb.co/TBzr24Bm/foxspot-logo-2.jpg"
           alt="logo"
           width={74}
           height={29}
