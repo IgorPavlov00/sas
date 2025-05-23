@@ -15,7 +15,7 @@ const About = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="w-full max-w-screen-xl"
         >
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8 py-12">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-16 py-12">
             {/* Text Section */}
             <motion.div
               className="w-full lg:w-1/2 text-center lg:text-left"
