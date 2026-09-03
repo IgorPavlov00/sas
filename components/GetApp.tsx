@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Button from "./Button";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,7 +12,8 @@ const GetApp = () => {
   // Explicitly type the ref as RefObject<HTMLDivElement>
   const [appRef] = useScrollToOffset<HTMLDivElement>(80, 0.5); // Adjust 80px as needed
 
-  const appUrl = "https://foxspot.base44.app/login?from_url=https%3A%2F%2Ffoxspot.base44.app%2F";
+  const appUrl =
+    "https://foxspot.base44.app/login?from_url=https%3A%2F%2Ffoxspot.base44.app%2F";
 
   return (
     <>
@@ -49,11 +50,7 @@ const GetApp = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.6 }}
             >
-              
-                href={appUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={appUrl} target="_blank" rel="noopener noreferrer">
                 <Button
                   type="button"
                   title="App Store"
@@ -63,11 +60,7 @@ const GetApp = () => {
                 />
               </a>
 
-              
-                href={appUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={appUrl} target="_blank" rel="noopener noreferrer">
                 <Button
                   type="button"
                   title="Play Store"
